@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #chat1 .form-outline .form-control~.form-notch div {
+pointer-events: none;
+border: 1px solid;
+border-color: #eee;
+box-sizing: border-box;
+background: transparent;
+}
+
+#chat1 .form-outline .form-control~.form-notch .form-notch-leading {
+left: 0;
+top: 0;
+height: 100%;
+border-right: none;
+border-radius: .65rem 0 0 .65rem;
+}
+
+#chat1 .form-outline .form-control~.form-notch .form-notch-middle {
+flex: 0 0 auto;
+max-width: calc(100% - 1rem);
+height: 100%;
+border-right: none;
+border-left: none;
+}
+
+#chat1 .form-outline .form-control~.form-notch .form-notch-trailing {
+flex-grow: 1;
+height: 100%;
+border-left: none;
+border-radius: 0 .65rem .65rem 0;
+}
+
+#chat1 .form-outline .form-control:focus~.form-notch .form-notch-leading {
+border-top: 0.125rem solid #39c0ed;
+border-bottom: 0.125rem solid #39c0ed;
+border-left: 0.125rem solid #39c0ed;
+}
+
+#chat1 .form-outline .form-control:focus~.form-notch .form-notch-leading,
+#chat1 .form-outline .form-control.active~.form-notch .form-notch-leading {
+border-right: none;
+transition: all 0.2s linear;
+}
+
+#chat1 .form-outline .form-control:focus~.form-notch .form-notch-middle {
+border-bottom: 0.125rem solid;
+border-color: #39c0ed;
+}
+
+#chat1 .form-outline .form-control:focus~.form-notch .form-notch-middle,
+#chat1 .form-outline .form-control.active~.form-notch .form-notch-middle {
+border-top: none;
+border-right: none;
+border-left: none;
+transition: all 0.2s linear;
+}
+
+#chat1 .form-outline .form-control:focus~.form-notch .form-notch-trailing {
+border-top: 0.125rem solid #39c0ed;
+border-bottom: 0.125rem solid #39c0ed;
+border-right: 0.125rem solid #39c0ed;
+}
+
+#chat1 .form-outline .form-control:focus~.form-notch .form-notch-trailing,
+#chat1 .form-outline .form-control.active~.form-notch .form-notch-trailing {
+border-left: none;
+transition: all 0.2s linear;
+}
+
+#chat1 .form-outline .form-control:focus~.form-label {
+color: #39c0ed;
+}
+
+#chat1 .form-outline .form-control~.form-label {
+color: #bfbfbf;
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+    </style>
+
+      
+      <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+      
+          
+</head>
+<body>
+
+    <section style="background-color: #eee;text-align: center;">
+        <div class="container py-5">
+      
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+      
+              <div class="card" id="chat1" style="border-radius: 15px;">
+                <div
+                  class="card-header d-flex justify-content-between align-items-center p-3 bg-info text-white border-bottom-0"
+                  style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                  <i class="fas fa-angle-left"></i>
+                  <p class="mb-0 fw-bold">                  <h1>Phone Number Information</h1>
+                  </p>
+                  <i class="fas fa-times"></i>
+                </div>
+                <div class="card-body">
+
+                    <div class="d-flex flex-row justify-content-start mb-4">
+                      <img src="https://images7.alphacoders.com/100/thumbbig-1009606.webp" alt="avatar 1" style="width: 45px; height: 100%;">
+                      <div class="p-3 ms-3" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
+                        <p class="small mb-0">  
+                        <button class="glow-on-hover" ><p>Country Name:    {{ company_name }}</p></button>
+                        
+                        <button class="glow-on-hover" ><p>Carrier Name: {{ company_phone }}</p></button>
+                        
+                        <button class="glow-on-hover" ><p>Timezone: {{ timeZone }}</p></button>
+
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row justify-content-start mb-4">
+                        <img src="https://images7.alphacoders.com/100/thumbbig-1009606.webp" alt="avatar 1" style="width: 45px; height: 100%;">
+                        <div class="ms-3" style="border-radius: 15px;">
+                          <div class="bg-image">
+                            <div class="p-3 ms-3" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
+                                <p class="small mb-0">  
+                                <p>Click the Map</p>
+                                
+                                
+                              </div>
+                           <a href="/loc"> <img src="../static/m.jpg"
+                              style="border-radius: 15px;" hight="208px" width="116px" alt="video">
+                           </a>
+                          </div>
+                        </div>
+                      </div>
+                
+      
+                </div>
+              </div>
+      
+            </div>
+          </div>
+      
+        </div>
+      </section>
+
+
+
+
+    </body>
+</html>
